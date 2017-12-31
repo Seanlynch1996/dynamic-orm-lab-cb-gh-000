@@ -30,4 +30,13 @@ class InteractiveRecord
     self.class.to_s.downcase.pluralize
   end
 
+  def col_names_for_insert
+    cols = column_names
+    cols.each do |col|
+      if col = "id"
+        col = nil
+      end
+    end
+    cols.compact
+    cols.join(", ")
 end
