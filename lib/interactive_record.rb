@@ -33,7 +33,7 @@ class InteractiveRecord
   def col_names_for_insert
     cols = column_names
     cols.each do |col|
-      if col = "id"
+      if col == "id"
         col = nil
       end
     end
