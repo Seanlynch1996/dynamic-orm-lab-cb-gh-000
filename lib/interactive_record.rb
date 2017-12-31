@@ -53,7 +53,7 @@ class InteractiveRecord
       SELECT * FROM #{self.table_name}
       WHERE name = '#{name}';
       SQL
-    Student.new(DB[:conn].execute(sql)[0])
+    DB[:conn].execute(sql)[0]
   end
 
 
