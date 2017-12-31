@@ -31,12 +31,5 @@ class InteractiveRecord
   end
 
   def col_names_for_insert
-    cols = self.class.column_names
-    cols.each do |col|
-      if col == "id"
-        col = nil
-      end
-    end
-    cols.compact
-    cols.join(", ")
+    self.class.column_names.delete_if {|col| col == "id"}.join(", ")
 end
