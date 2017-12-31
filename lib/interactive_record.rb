@@ -51,7 +51,7 @@ class InteractiveRecord
   def self.find_by_name(name)
     sql = <<-SQL
       SELECT * FROM #{self.table_name}
-      WHERE name = #{name};
+      WHERE name = '#{name}';
       SQL
     Student.new(DB[:conn].execute(sql)[0])
   end
